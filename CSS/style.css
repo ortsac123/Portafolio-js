@@ -46,13 +46,59 @@ header{
 
 .container-inicio{
     display: flex;
+    max-width: 1200px;
+    margin: auto;
+    align-items: center;
+    height: 500px;
+    justify-content: center;
 }
 
-.about{
+.btn-about{
     background-color: rgb(40, 40, 248);
     border-radius: 8%;
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
     padding: 2px 2px;
+    display: inline-block;
+}
+
+.inicio-texto h1{
+    line-height:normal;
+    font-size: 3rem;
+}
+
+.inicio-texto h2{
+    font-size: 1.3rem;
+}
+
+.inicio-texto p{
+    font-size: 1.2rem;
+}
+
+.redes{
+    display: flex;
+    gap: 10px;
+
+}
+
+.inicio-imagen{
+    position: absolute;
+    display: flex;
+    padding: 10px 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    transform: translateX(300%);
+    
+    
+}
+
+.inicio-imagen img{
+    width: 100%;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* sombra difusa */
+    object-fit: cover;
+
 }
