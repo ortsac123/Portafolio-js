@@ -78,10 +78,22 @@ header {
 
 
 .inicio-texto h1 {
-    font-size: 4.5rem;
+    color: rgb(46, 46, 242);
+    font-size: 4.2rem;
     margin-bottom: 20px;
     width: 100%;
+    font-weight: bold;
 }
+
+.inicio-texto h1 span{
+    color: black;
+    font-size: 4.2rem;
+    margin-bottom: 20px;
+    width: 100%;
+    font-weight: bold;
+    
+}
+
 
 
 .btn-about {
@@ -192,3 +204,4 @@ header {
     justify-content: center;
   }
 }
+

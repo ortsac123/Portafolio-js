@@ -1,16 +1,10 @@
 //Aca ira la logica de navegacion interactiva 
 tsParticles.load("tsparticles", {
-  background: {
-    color: "#0d47a1" // azul oscuro de fondo
-  },
-  particles: {
-    number: { value: 60 },
-    size: { value: 3 },
-    move: { speed: 2 },
-    links: {
-      enable: true,
-      distance: 150,
-      color: "#ffffff"
-    }
-  }
-});
+      background: { color: "#f3f2f2ff" },
+      particles: {
+        number: { value: 40 },
+        color: { value: "#690303ff" },
+        links: { enable: true, color: "#253bdfff", distance: 150 },
+        move: { enable: true, speed: 2 }
+      }
+    });
