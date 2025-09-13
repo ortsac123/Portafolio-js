@@ -16,45 +16,47 @@
 
 <body>
     <header>
-        <nav>
-            <h1>Este es mi portafolio</h1>
-            <ul class="nav-item">
-                <li class="item"><a href="">Inicio</a></li>
-                <li class="item"><a href="">Sobre mi</a></li>
-                <li class="item"><a href="">Hbilidades</a></li>
-                <li class="item"><a href="">Proyectos</a></li>
-                <li class="item"><a href="">Contacto</a></li>
+        
+                   <nav class="container nav-container">
+            <a href="#" class="logo">
+                <h1>Portafolio</h1>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                <li class="nav-item"><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
+        
     </header>
-    <main>
-        <section id="inicio">
-            <div id="tsparticles" class="absolute inset-0 -z-10"></div>
-            <div class="container-inicio">
-                <div class="inicio-texto">
-                    <h1><span>¡Hola! Soy </span>Rafael Castro</h1>
-                    <h2>Ingeniero electrónico</h2>
-                    <p>Ingeniero Electrónico que decidió llevar su curiosidad tecnológica un paso más allá</p>
-                    <button class="btn-about">Sobre mi 🚀</button>
-
-
-                    <div class="redes">
-                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="https://github.com" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+     <main>
+        <section id="inicio" class="hero">
+            <div id="tsparticles" class="particles-background"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>¡Hola! Soy <span class="text-highlight">Rafael Castro</span></h1>
+                    <h2 class="typed-text"></h2>
+                    <p class="intro-paragraph">Ingeniero Electrónico que decidió llevar su curiosidad tecnológica un paso más allá, adentrándose en el mundo del desarrollo web.</p>
+                    <a href="#sobre-mi" class="btn btn-primary">Sobre mí 🚀</a>
+                    <div class="social-links">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github fa-2x"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter fa-2x"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
                     </div>
                 </div>
-
-                <figure class="inicio-imagen">
-                    <img src="img\perfil.jpg" alt="">
+                <figure class="hero-image">
+                    <img src="img/perfil.jpg" alt="Fotografía de perfil de Rafael Castro, Ingeniero Electrónico">
                 </figure>
             </div>
         </section>
-        <section id="sobre-mi"></section>
-        <section id="habilidades"></section>
-        <section id="proyectos"></section>
-        <section id="contacto"></section>
+
+        <section id="sobre-mi" class="section"></section>
+        <section id="habilidades" class="section"></section>
+        <section id="proyectos" class="section"></section>
+        <section id="contacto" class="section"></section>
     </main>
   <script src="JS\main.js"></script>
 </body>
