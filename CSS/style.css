@@ -21,14 +21,15 @@
 
     /* Espaciado */
     --espaciado-x-pequeno: 8px;
-    --espaciado-pequeno: 16px;
-    --espaciado-medio: 24px;
-    --espaciado-grande: 48px;
+    --espaciado-pequeno: 12px;
+    --espaciado-medio: 18px;
+    --espaciado-grande: 28px;
 }
 
 html {
-    font-size: 62.5%; /* 1rem = 10px para facilitar el cálculo */
-    scroll-behavior: smooth; /*Hacer que el desplazamiento de la pagina web sea suave*/
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height, 80px);
 }
 
 body {
@@ -36,21 +37,29 @@ body {
     line-height: 1.6;
     color: var(--color-texto);
     background-color: var(--color-fondo-claro);
-    overflow-x: hidden; /* Evita el scroll horizontal */
+    overflow-x: hidden;
 }
 
 /* --- 2. LAYOUT GLOBAL Y COMPONENTES REUTILIZABLES --- */
 .container {
-    max-width: 120rem; /* 1200px */
+    max-width: 120rem;
     width: min(120rem, 90%);
     margin: 1rem auto;
     padding: 0 var(--espaciado-pequeno);
 }
 
 .section {
-    padding: var(--espaciado-grande) 0;
-    min-height: 100vh; /* Asegura que las secciones tengan altura */
+    padding: var(--espaciado-medio) 0;
+    min-height: auto;
 }
+/* 
+.section-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--espaciado-grande);
+    color: var(--color-secundario);
+} */
 
 .particles-background {
     position: absolute;
@@ -58,7 +67,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /*Empuja el fondo detras de los elementos es decir -1 en eje z*/
+    z-index: -1;
 }
 
 .text-highlight {
@@ -66,6 +75,7 @@ body {
     font-weight: 700;
 }
 
+/*Boton "Sobre mi"*/
 .btn {
     display: inline-block;
     padding: 1.2rem 2.4rem;
@@ -89,6 +99,19 @@ body {
     box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.btn-outline {
+    background: transparent;
+    color: var(--color-primario);
+    border: 2px solid var(--color-primario);
+    box-shadow: none;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primario);
+    color: var(--color-texto-claro);
+    transform: translateY(-0.3rem);
+}
+
 .social-links a {
     color: var(--color-texto);
     font-size: 2.4rem;
@@ -101,13 +124,14 @@ body {
 }
 
 /* --- 3. ESTILOS DE COMPONENTES ESPECÍFICOS --- */
+
 .header {
     position: sticky;
     top: 0;
-    background-color: var(--color-fondo-claro);
-    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    padding: var(--espaciado-pequeno) 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0.2rem 0.5rem var(--color-sombra);
 }
 
 .nav-container {
@@ -148,11 +172,11 @@ body {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     color: var(--color-primario);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after, .nav-link.active::after {
     width: 100%;
     left: 0;
 }
@@ -161,7 +185,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 8rem); /* Altura completa menos la cabecera */
+    min-height: calc(70vh - 8rem);
     position: relative;
 }
 
@@ -195,7 +219,7 @@ body {
 }
 
 .social-links {
-    margin-top: var(--espaciado-medio);
+    margin-top: var(--espaciado-pequeno);
     display: flex;
     gap: var(--espaciado-pequeno);
     justify-content: center;
@@ -207,6 +231,158 @@ body {
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0.8rem 2rem rgba(236, 0, 0, 0.15);
+}
+
+/* Sección Sobre Mí */
+.about-content {
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+/* Sección Habilidades */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.skill-icon {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 3px #616060;
+    padding: 2rem;
+    border-radius: 10%;
+    box-shadow: 0 1rem 3rem var(--color-sombra);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-icon i {
+    font-size: 6rem;
+}
+
+.skill-icon:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1.5rem 4rem var(--color-sombra);
+}
+
+.skill-tooltip {
+    position: absolute;
+    bottom: -2rem;
+    font-size: 1.4rem;
+    background-color: var(--color-texto);
+    color: var(--color-texto-claro);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.skill-icon:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Sección Proyectos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaciado-medio);
+}
+
+.project-card {
+    background-color: var(--color-fondo-claro);
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem var(--color-sombra);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-0.5rem);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: var(--espaciado-pequeno);
+}
+
+.project-info h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-info p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.project-links {
+    margin-top: var(--espaciado-pequeno);
+    display: flex;
+    gap: 1rem;
+}
+
+/* Sección Contacto */
+.contact-form {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.contact-form button {
+    align-self: flex-start;
+}
+
+/* Footer */
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    background-color: var(--color-fondo-claro);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer .social-links a {
+    color: var(--color-texto);
+    font-size: 1.8rem;
+    margin: 0 1rem;
 }
 
 /* --- 4. MEDIA QUERIES PARA RESPONSIVIDAD --- */
@@ -269,4 +445,30 @@ body {
     .hero-text h2 {
         font-size: 2.4rem;
     }
+}
+
+.section h2{
+    font-size: 3rem;
+    margin-bottom: var(--espaciado-pequeno);
+    font-weight: 800;
+    color: var(--color-primario);
+    
+}
+
+.items i{
+    border: 2px solid black;
+    border-radius: 5%;
+    padding: 2px;
+     box-shadow: 0 2px 4px rgba(0,0,0,0.20), 0 8px 20px rgba(50,70,110,0.14), 0 18px 40px rgba(120,125,130,0.06);
+}
+
+.items i:hover{
+    transform: scale(1.03);
+}
+
+.container-subtitile h2{
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    margin-top: 4rem;
 }
