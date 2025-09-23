@@ -7,12 +7,12 @@
 
 :root {
     /* Colores */
-    --color-primario: #667eea; /* Azul claro para el tema */
-    --color-secundario: #6721ad; /* Púrpura para acentos */
-    --color-acento: #00adb5; /* Turquesa para efectos de hover */
-    --color-texto: #333333; /* Gris oscuro para el texto principal */
-    --color-texto-claro: #f4f4f4; /* Gris claro para texto sobre fondo oscuro */
-    --color-fondo-claro: #ffffff; /* Blanco para fondos */
+    --color-primario: #667eea;
+    --color-secundario: #6721ad;
+    --color-acento: #00adb5;
+    --color-texto: #333333;
+    --color-texto-claro: #f4f4f4;
+    --color-fondo-claro: #ffffff;
     --color-sombra: rgba(0, 0, 0, 0.1);
 
     /* Tipografía */
@@ -52,14 +52,6 @@ body {
     padding: var(--espaciado-medio) 0;
     min-height: auto;
 }
-/* 
-.section-title {
-    font-size: 3.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: var(--espaciado-grande);
-    color: var(--color-secundario);
-} */
 
 .particles-background {
     position: absolute;
@@ -75,7 +67,7 @@ body {
     font-weight: 700;
 }
 
-/*Boton "Sobre mi"*/
+/* Botones */
 .btn {
     display: inline-block;
     padding: 1.2rem 2.4rem;
@@ -172,11 +164,13 @@ body {
     transition: width 0.3s ease, left 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     color: var(--color-primario);
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
     left: 0;
 }
@@ -249,6 +243,10 @@ body {
     justify-items: center;
 }
 
+.habilidades-grid i {
+    transform: scale(1.03);
+}
+
 .skill-icon {
     position: relative;
     display: inline-flex;
@@ -257,7 +255,7 @@ body {
     border: solid 3px #616060;
     padding: 2rem;
     border-radius: 10%;
-    box-shadow: 0 1rem 3rem var(--color-sombra);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(50, 70, 110, 0.14), 0 18px 40px rgba(120, 125, 130, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -293,9 +291,9 @@ body {
 
 /* Sección Proyectos */
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--espaciado-medio);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+  gap: 2rem;
 }
 
 .project-card {
@@ -303,17 +301,19 @@ body {
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem var(--color-sombra);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-0.5rem);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 .project-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    display: block;
 }
 
 .project-info {
@@ -391,23 +391,35 @@ body {
         flex-direction: row;
         text-align: left;
     }
+
     .hero-text {
         flex: 1;
         margin-right: var(--espaciado-grande);
     }
+
     .hero-text h1 {
         font-size: 6rem;
     }
+
     .hero-text h2 {
         font-size: 3.5rem;
     }
+
     .hero-image {
         flex: 1;
         display: flex;
         justify-content: center;
     }
+
     .social-links {
         justify-content: flex-start;
+    }
+
+    /* Reglas para project-grid en pantallas medianas */
+    @media (max-width: 1024px) {
+        .project-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 }
 
@@ -415,85 +427,104 @@ body {
     .header {
         padding: 1rem 0;
     }
+
     .nav-container {
         flex-direction: column;
         gap: 1.5rem;
     }
+
     .nav-menu {
         justify-content: center;
         gap: 1.5rem;
     }
+
     .hero {
         padding-top: var(--espaciado-grande);
     }
+
     .hero-content {
         padding: 0 var(--espaciado-pequeno);
     }
+
     .hero-image {
         order: -1;
     }
+
     .hero-image img {
         width: 20rem;
         height: 20rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+    /* Reglas para project-grid en móviles */
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
     .hero-text h1 {
         font-size: 4rem;
     }
+
     .hero-text h2 {
         font-size: 2.4rem;
     }
 }
 
-.section h2{
-    font-size: 3rem;
-    margin-bottom: var(--espaciado-pequeno);
-    font-weight: 800;
-    color: var(--color-primario);
-    
+/* Títulos de sección unificados y mejorados */
+.section-title,
+.container-subtitile h2,
+.h2.text-highlight {
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: var(--espaciado-grande);
+    color: var(--color-secundario);
 }
 
-.items i{
-    border: 2px solid black;
-    border-radius: 5%;
-    padding: 2px;
-     box-shadow: 0 2px 4px rgba(0,0,0,0.20), 0 8px 20px rgba(50,70,110,0.14), 0 18px 40px rgba(120,125,130,0.06);
-}
-
-.items i:hover{
-    transform: scale(1.03);
-}
-
-.container-subtitile h2{
-    display: flex;
-    justify-content: start;
-    text-align: start;
+.container-subtitile h2 {
+    display: block;
+    text-align: left;
     margin-top: 4rem;
 }
 
+.contact-form label{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
-  gap: 2rem;
 }
 
-.card img {
-  width: 100%;
-  height: 200px;      /* ajusta según diseño */
-  object-fit: cover;  /* recorta en lugar de deformar */
+.contact-form textarea{
+    border: 1.5px solid #ddd;
+    border-radius: 1rem;
+     transition: border-color 0.3s ease;
+     
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--color-primario);
+  outline: none;
+}
+
+.contact-form button{
+    align-self: center;
+}
+
+.form-message {
   display: block;
-}
-@media (max-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr); /* en pantallas medianas, 2 */
-  }
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: black;
+  
 }
 
-@media (max-width: 640px) {
-  .project-grid {
-    grid-template-columns: 1fr; /* en móviles, 1 por fila */
-  }
+.form-message.error {
+  color: #d93025;
+}
+
+.form-message.success {
+  color: green;
 }

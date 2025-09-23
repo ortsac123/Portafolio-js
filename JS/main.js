@@ -49,3 +49,31 @@ window.addEventListener('resize', updateHeaderHeight);
   }
 
   document.addEventListener("DOMContentLoaded", typeWriter);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contact-form");
+  const emailInput = document.getElementById("email");
+  const messageInput = document.getElementById("message");
+  const feedback = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Limpia clases previas
+  feedback.classList.remove("error", "success");
+
+  feedback.classList.remove("error", "success");
+  
+  if (emailInput.value.trim() === "" || messageInput.value.trim() === "") {
+    feedback.textContent = "❌ Por favor completa todos los campos";
+    feedback.classList.add("error");
+  } else if (messageInput.value.trim().length < 10) {
+    feedback.textContent = "❌ El mensaje debe tener al menos 10 caracteres";
+    feedback.classList.add("error");
+  } else {
+    feedback.textContent = "✅ Tu mensaje ha sido enviado con éxito";
+    feedback.classList.add("success");
+    form.reset();
+  }
+  });
+});
