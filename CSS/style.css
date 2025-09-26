@@ -38,12 +38,12 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo-claro);
     overflow-x: hidden;
-    max-width: 900;
+    max-width: 1100;
 }
 
 /* --- 2. LAYOUT GLOBAL Y COMPONENTES REUTILIZABLES --- */
 .container {
-    max-width: 120rem;
+    max-width: 105rem;
     width: min(120rem, 90%);
     margin: 1rem auto;
     padding: 0 var(--espaciado-pequeno);
@@ -131,7 +131,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 1rem;
 }
 
 .logo h1 {
@@ -215,8 +214,8 @@ body {
 }
 
 .social-links {
-    margin-top: 3rem;
-
+    margin-top: var(--espaciado-pequeno);
+    
     display: flex;
     gap: var(--espaciado-pequeno);
     justify-content: center;
@@ -398,6 +397,7 @@ body {
     .hero-text {
         flex: 1;
         margin-right: var(--espaciado-grande);
+        max-width: 60rem; 
     }
 
     .hero-text h1 {
@@ -482,7 +482,8 @@ body {
     font-weight: 700;
     text-align: center;
     margin-bottom: var(--espaciado-grande);
-    color: var(--color-secundario);
+    color: var(--color-text);
+    
 }
 
 .container-subtitile h2 {

@@ -25,31 +25,43 @@ function updateHeaderHeight() {
 window.addEventListener('load', updateHeaderHeight);
 window.addEventListener('resize', updateHeaderHeight);
 
- const normalText = "¡Hola! Soy ";  
-  const highlightText = "Rafael Castro";  
-  const speed = 100; // ms por letra
-  let i = 0;
-  let j = 0;
+//  const normalText = "¡Hola! Soy ";  
+//   const highlightText = "Rafael Castro";  
+//   const speed = 100; // ms por letra
+//   let i = 0;
+//   let j = 0;
 
-  function typeWriter() {
-    const typingEl = document.getElementById("typing");
+//   function typeWriter() {
+//     const typingEl = document.getElementById("typing");
 
-    if (i < normalText.length) {
-      // Escribe el texto normal
-      typingEl.innerHTML += normalText.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    } else if (j < highlightText.length) {
-      // Escribe el nombre dentro del span azul
-      typingEl.innerHTML = normalText + 
-        "<span class='text-highlight'>" + 
-        highlightText.substring(0, j + 1) + 
-        "</span>";
-      j++;
-      setTimeout(typeWriter, speed);
-    }
-  }
+//     if (i < normalText.length) {
+//       // Escribe el texto normal
+//       typingEl.innerHTML += normalText.charAt(i);
+//       i++;
+//       setTimeout(typeWriter, speed);
+//     } else if (j < highlightText.length) {
+//       // Escribe el nombre dentro del span azul
+//       typingEl.innerHTML = normalText + 
+//         "<span class='text-highlight'>" + 
+//         highlightText.substring(0, j + 1) + 
+//         "</span>";
+//       j++;
+//       setTimeout(typeWriter, speed);
+//     }
+//   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  new Typed("#typed-name", {
+    strings: [" Soy Rafael Castro"], 
+    typeSpeed: 80,      // Velocidad de escritura (ms por letra)
+    backSpeed: 50,      // Velocidad de borrado
+    backDelay: 1500,    // Tiempo antes de borrar
+    startDelay: 500,    // Retraso inicial
+    loop: true,         // Repite infinitamente
+    showCursor: true,   // Muestra el cursor
+    cursorChar: "|"     // Carácter del cursor
+  });
+});
   document.addEventListener("DOMContentLoaded", typeWriter);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -127,3 +139,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 });
+
