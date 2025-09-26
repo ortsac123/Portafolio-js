@@ -1,4 +1,6 @@
 //Aca ira la logica de navegacion interactiva 
+
+emailjs.init("nWMnYPnYv8tTWJXBR");
 tsParticles.load("tsparticles", {
       background: { color: "#f3f2f2ff" },
       particles: {
@@ -55,6 +57,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.getElementById("email");
   const messageInput = document.getElementById("message");
   const feedback = document.getElementById("form-message");
+  const name = document.getElementById("name")
+
+  // form.addEventListener("submit", function (e) {
+  // e.preventDefault();
+
+  // // Limpia clases previas
+  // feedback.classList.remove("error", "success");
+
+  // feedback.classList.remove("error", "success");
+
+  // if (emailInput.value.trim() === "" || messageInput.value.trim() === "") {
+  //   feedback.textContent = "❌ Por favor completa todos los campos";
+  //   feedback.classList.add("error");
+  // } else if (messageInput.value.trim().length < 10) {
+  //   feedback.textContent = "❌ El mensaje debe tener al menos 10 caracteres";
+  //   feedback.classList.add("error");
+  // } else if (name.value.trim() === "") {
+  //   feedback.textContent = "❌ Por favor ingrese su nombre";
+  //   feedback.classList.add("error");
+  // }
+  
+  // else {
+  //   feedback.textContent = "✅ Tu mensaje ha sido enviado con éxito";
+  //   feedback.classList.add("success");
+  //   form.reset();
+  // }
+  // });
 
   form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -62,18 +91,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // Limpia clases previas
   feedback.classList.remove("error", "success");
 
-  feedback.classList.remove("error", "success");
-  
+  if (name.value.trim() === "") {
+    feedback.textContent = "❌ Por favor ingrese su nombre";
+    feedback.classList.add("error");
+    return;
+  }
+
   if (emailInput.value.trim() === "" || messageInput.value.trim() === "") {
     feedback.textContent = "❌ Por favor completa todos los campos";
     feedback.classList.add("error");
-  } else if (messageInput.value.trim().length < 10) {
+    return;
+  }
+
+  if (messageInput.value.trim().length < 10) {
     feedback.textContent = "❌ El mensaje debe tener al menos 10 caracteres";
     feedback.classList.add("error");
-  } else {
+    return;
+  }
+
+  // 🚀 Envío con EmailJS
+  emailjs.send("service_dz668jg", "template_6bgg7rq", {
+    name: name.value,
+    email: emailInput.value,
+    message: messageInput.value
+  })
+  .then(() => {
     feedback.textContent = "✅ Tu mensaje ha sido enviado con éxito";
     feedback.classList.add("success");
     form.reset();
-  }
+  })
+  .catch(() => {
+    feedback.textContent = "❌ Ocurrió un error al enviar el mensaje";
+    feedback.classList.add("error");
   });
+});
+
 });
