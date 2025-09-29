@@ -27,7 +27,7 @@ function initTyped() {
         backSpeed: 50,
         backDelay: 1500,
         startDelay: 500,
-        loop: true,
+        loop: false,
         showCursor: true,
         cursorChar: "|"
     });
