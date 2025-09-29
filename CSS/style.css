@@ -157,6 +157,7 @@ body {
     font-size: 1.7rem;
     font-weight: 600;
     transition: color 0.3s ease;
+    
 }
 
 .nav-link::after {
@@ -213,7 +214,7 @@ body {
 }
 
 .intro-paragraph {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     max-width: 60rem;
     margin-bottom: var(--espaciado-medio);
 }
@@ -421,6 +422,7 @@ body {
 
     .social-links {
         justify-content: flex-start;
+        padding-left: 0.7rem;
     }
 
     /* Reglas para project-grid en pantallas medianas */
