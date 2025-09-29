@@ -260,7 +260,7 @@ body {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    border: solid 3px #616060;
+    
     padding: 2rem;
     border-radius: 10%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 20px rgba(50, 70, 110, 0.14), 0 18px 40px rgba(120, 125, 130, 0.06);
@@ -347,7 +347,6 @@ body {
 .project-links {
     margin-top: var(--espaciado-pequeno);
     display: flex;
-    gap: 1rem;
 }
 
 /* Sección Contacto */
@@ -478,6 +477,17 @@ body {
     .hero-text h2 {
         font-size: 2.4rem;
     }
+
+    .container-subtitile h2 {
+        font-size: 2.8rem;
+    font-weight: 500;
+    text-align: left; /* Mantener la alineación previa si es necesaria */
+    margin-top: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-medio);
+    border-bottom: 2px solid white;
+    display: inline-block;
+}
+
 }
 
 /* Títulos de sección unificados y mejorados */
@@ -488,14 +498,20 @@ body {
     font-weight: 700;
     text-align: center;
     margin-bottom: var(--espaciado-grande);
-    color: var(--color-text);
+    color: var(--color-secundario);
     
 }
 
+
+
 .container-subtitile h2 {
-    display: block;
-    text-align: left;
-    margin-top: 4rem;
+        font-size: 2.8rem;
+    font-weight: 700;
+    text-align: left; /* Mantener la alineación previa si es necesaria */
+    margin-top: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-medio);
+    border-bottom: 2px solid var(--color-primario);
+    display: inline-block;
 }
 
 .contact-form label{
