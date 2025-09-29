@@ -4,52 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Rafael Castro | Portafolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.10.1/tsparticles.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-
-
+    <link rel="stylesheet" href="CSS/style.css"> 
 </head>
 
-
-
 <body>
-    <header>
-
+    <header class="header">
         <nav class="container nav-container">
             <a href="#" class="logo">
                 <h1>Portafolio</h1>
             </a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#inicio" class="nav-link">Inicio</a></li>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="nav-link active">Inicio</a></li>
                 <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
                 <li class="nav-item"><a href="#proyectos" class="nav-link">Proyectos</a></li>
                 <li class="nav-item"><a href="#contacto" class="nav-link">Contactar</a></li>
             </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
-
     </header>
+
     <main>
         <section id="inicio" class="hero">
             <div id="tsparticles" class="particles-background"></div>
             <div class="container hero-content">
                 <div class="hero-text">
-                    <h1>¡Hola!<span id="typed-name" class="text-highlight"></span></h1>
-
-
+                    <h1>¡Hola!<span id="typed-name" class="text-highlight"></span></h1> 
                     <p class="intro-paragraph">Ingeniero Electrónico que decidió llevar su curiosidad tecnológica un
                         paso más allá, adentrándose en el mundo del desarrollo web.</p>
                     <a href="#sobre-mi" class="btn btn-primary">Sobre mí 🚀</a>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/rafael-castro-b9a436237" target="_blank" aria-label="LinkedIn"><i
-                                class="fab fa-linkedin fa-2x"></i></a>
+                        <a href="https://www.linkedin.com/in/rafael-castro-b9a436237" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin fa-2x"></i></a>
                         <a href="https://github.com/ortsac123/" target="_blank" aria-label="GitHub"><i
                                 class="fab fa-github fa-2x"></i></a>
                         <a href="https://www.instagram.com/rafaelcaastroc/" target="_blank" aria-label="Instagram"><i
@@ -61,92 +57,121 @@
                 </figure>
             </div>
         </section>
-        <div class="container">
-            <section id="habilidades" class="section">
+
+        <section id="habilidades" class="section">
+            <div class="container">
                 <div class="container-subtitile">
                     <h2>
                         Conjunto de habilidades profesionales
                     </h2>
                 </div>
-                <div
-                    class="items grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 gap-8 gap-x-0 text-9xl justify-items-center E">
-                    <i class="devicon-javascript-plain colored"></i>
-                    <i class="devicon-react-original colored"></i>
-                    <i class="devicon-html5-plain colored"></i>
-                    <i class="devicon-css3-plain colored"></i>
-                    <i class="devicon-mysql-plain-wordmark colored"></i>
-                    <i class="devicon-git-plain colored"></i>
-                    <i class="devicon-postgresql-plain colored"></i>
-
+                <div class="habilidades-grid">
+                    <div class="skill-icon">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span class="skill-tooltip">JavaScript</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-react-original colored"></i>
+                        <span class="skill-tooltip">React</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span class="skill-tooltip">HTML5</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span class="skill-tooltip">CSS3</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-mysql-plain-wordmark colored"></i>
+                        <span class="skill-tooltip">MySQL</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-git-plain colored"></i>
+                        <span class="skill-tooltip">Git</span>
+                    </div>
+                    <div class="skill-icon">
+                        <i class="devicon-postgresql-plain colored"></i>
+                        <span class="skill-tooltip">PostgreSQL</span>
+                    </div>
                 </div>
 
-                <section id="habilidades" class="section">
-                    <div class="container-subtitile">
-                        <h2>
-                            Herramientas
-                        </h2>
-                    </div>
-                    <div
-                        class="items grid grid-cols-4 sm:grid-cols-3 md:grid-cols-4 gap-8 gap-x-0 text-9xl justify-items-center">
+                <div class="container-subtitile">
+                    <h2>
+                        Herramientas
+                    </h2>
+                </div>
+                <div class="habilidades-grid">
+                    <div class="skill-icon">
                         <i class="devicon-linux-plain colored"></i>
+                        <span class="skill-tooltip">Linux</span>
+                    </div>
+                    <div class="skill-icon">
                         <i class="devicon-visualstudio-plain colored"></i>
+                        <span class="skill-tooltip">VS Code</span>
+                    </div>
+                    <div class="skill-icon">
                         <i class="devicon-microsoftsqlserver-plain-wordmark"></i>
+                        <span class="skill-tooltip">SQL Server</span>
+                    </div>
+                    <div class="skill-icon">
                         <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                        <span class="skill-tooltip">AWS</span>
                     </div>
-                </section>
-                <section id="proyectos" class="section">
-                    <h2 class="section-title">Mis Trabajos recientes</h2>
-
-                    <div class="project-grid">
-
-                        <!-- Tarjeta de proyecto -->
-                        <article class="project-card">
-
-                            <img src="img\miniatura de portafolio.webp" alt="Vista previa del proyecto Pokedex">
-
-
-                            <div class="project-info">
-                                <h3>Mi portafolio</h3>
-                                <p>
-                                    Un sitio personal donde presento mis proyectos,
-                                    habilidades en desarrollo web y experiencia profesional.
-                                    Diseñado con un enfoque moderno y responsive para destacar
-                                    mi perfil como Ingeniero Electrónico y desarrollador.
-                                </p>
-
-                                <div class="project-links">
-                                    <a href="https://github.com/ortsac123/Portafolio-js" target="_blank"
-                                        class="btn btn-outline">
-                                        <i class="fab fa-github"></i> GitHub
-                                    </a>
-                                    <a href="https://ortsac123.github.io/Portafolio-js/" target="_blank"
-                                        class="btn btn-primary">
-                                        🚀 Demo
-                                    </a>
-                                </div>
-
-                            </div>
-                        </article>
-
-
-                    </div>
-
-
-        </div>
+                </div>
+            </div>
         </section>
+
+        <section id="proyectos" class="section">
+            <div class="container">
+                <h2 class="section-title">Mis Trabajos recientes</h2>
+
+                <div class="project-grid">
+
+                    <article class="project-card">
+
+                        <img class="project-image" src="img\miniatura de portafolio.webp" alt="Vista previa del proyecto Pokedex">
+
+
+                        <div class="project-info">
+                            <h3>Mi portafolio</h3>
+                            <p>
+                                Un sitio personal donde presento mis proyectos,
+                                habilidades en desarrollo web y experiencia profesional.
+                                Diseñado con un enfoque moderno y responsive para destacar
+                                mi perfil como Ingeniero Electrónico y desarrollador.
+                            </p>
+
+                            <div class="project-links">
+                                <a href="https://github.com/ortsac123/Portafolio-js" target="_blank"
+                                    class="btn btn-outline">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://ortsac123.github.io/Portafolio-js/" target="_blank"
+                                    class="btn btn-primary">
+                                    🚀 Demo
+                                </a>
+                            </div>
+
+                        </div>
+                    </article>
+                    </div>
+            </div>
+        </section>
+
         <section id="contacto" class="section">
             <div class="container">
                 <h2 class="section-title">Contáctame</h2>
                 <form action="" class="contact-form" id="contact-form">
-                    <label for="email">Nombre: </label>
-                    <input type="text" id="name" name="name" placeholder="Tu nombre">
+                    <label for="name">Nombre: </label>
+                    <input type="text" id="name" name="name" placeholder="Tu nombre" required>
 
                     <label for="email">Correo electronico</label>
-                    <input type="email" id="email" name="email" placeholder="Tu correo">
+                    <input type="email" id="email" name="email" placeholder="Tu correo" required>
 
                     <label for="message">Mensaje:</label>
                     <textarea type="text" id="message" name="message" rows="5"
-                        placeholder="Escribe tu mesaje"></textarea>
+                        placeholder="Escribe tu mesaje" required></textarea>
                     <button type="submit" class="btn btn-primary" id="send">Enviar</button>
                     <span id="form-message" class="form-message"></span>
                 </form>
@@ -154,10 +179,18 @@
         </section>
 
         <footer>
-            
+            <div class="container footer-container">
+                <p>&copy; 2025 Rafael Castro. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/rafael-castro-b9a436237" target="_blank" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ortsac123/" target="_blank" aria-label="GitHub"><i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
         </footer>
     </main>
-    <script src="JS\main.js"></script>
+    <script src="JS/main.js"></script>
 </body>
 
 </html>

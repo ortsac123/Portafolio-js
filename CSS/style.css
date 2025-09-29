@@ -38,7 +38,7 @@ body {
     color: var(--color-texto);
     background-color: var(--color-fondo-claro);
     overflow-x: hidden;
-    max-width: 1100;
+     
 }
 
 /* --- 2. LAYOUT GLOBAL Y COMPONENTES REUTILIZABLES --- */
@@ -133,10 +133,15 @@ body {
     align-items: center;
 }
 
+.logo{
+    text-decoration: none;
+}
+
 .logo h1 {
     font-size: 2.4rem;
     font-weight: 700;
     color: var(--color-secundario);
+    
 }
 
 .nav-menu {
@@ -226,6 +231,7 @@ body {
     height: 30rem;
     object-fit: cover;
     border-radius: 50%;
+      border: 5px solid var(--color-primario);
     box-shadow: 0 0.8rem 2rem rgba(236, 0, 0, 0.15);
 }
 
